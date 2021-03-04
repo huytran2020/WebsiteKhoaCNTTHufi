@@ -1,0 +1,50 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<DeTai>
+@{
+    ViewBag.Title = "PageDangKyDTKhoaLuan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+</head>
+<div id="left">
+    <div id="detai">
+        <div class="de-tai">
+            <h2>Danh sách đề tài khóa luận</h2>
+            <table class="detail" border="1" cellspacing="0" cellpadding="0">
+                <tr style="height:50px; background:#c7bfbf ">
+                    <th>Mã đề tài</th>
+                    <th>Tên đề tài</th>
+                    <th>Loại đề tài</th>
+                    <th>Khóa</th>
+                    <th>Giáo viên hướng dẫn</th>
+                    <th colspan="2">Tùy chọn</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr style="height:70px">
+                        <td>@item.MaDeTai</td>
+                        <td>@item.TenDeTai</td>
+                        <td>@item.LoaiDeTai.TenLoai</td>
+                        <td>@item.MaKhoa</td>
+                        <td>@item.GiaoVienHD.Name</td>
+                        <td><a href="@Url.Action("XemChiTietDeTai","NoiDung", new { maXemDT = item.MaDeTai })">Xem chi tiết</a></td>
+                        <td><a href="@Url.Action("DangKyDeTaiKhoaLuan","DangKyDeTai", new { maDT = item.MaDeTai })">Chọn đề tài</a></td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+        <div class="phantrang">
+            @Html.PagedListPager(Model, Page => Url.Action("GetPagingDangKyDTKL", new { Page }),
+            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+            { HttpMethod = "GET", UpdateTargetId = "main" }))
+        </div>
+    </div>
+</div>
+<div id="right">
+    @{ Html.RenderAction("MenuDeTai", "NoiDung");}
+</div>

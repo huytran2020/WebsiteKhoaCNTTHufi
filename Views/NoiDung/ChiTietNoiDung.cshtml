@@ -1,0 +1,23 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@model ConTentTinTuc
+@{
+    ViewBag.Title = "ChiTietNoiDung";
+}
+
+<head> 
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleCTND.css" />
+</head>
+<div id="main">
+    <div id="left">
+        <div class="noidung">
+            <div class="tennoidung"><h2><a href="">@Model.Name</a></h2></div>
+            <div class="ngaydang"><a>@Model.ModifiedDay</a></div>
+            <div class="noidung-hinh"><img src="~/Content/images/@Model.Image" alt="@Model.Name" /></div>
+            <div class="noidung-chitiet"><a>@Model.Detail</a></div>
+        </div>
+    </div>
+    <div id="right">
+        @{Html.RenderAction("DoiTac", "Home");}
+        
+    </div>
+</div>

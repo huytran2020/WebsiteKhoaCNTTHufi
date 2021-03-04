@@ -1,0 +1,72 @@
+﻿@model PagedList.IPagedList<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <a href="@Url.Action("IndexTT", "ContentTinTuc")">Thêm mới</a>
+</div>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Mã tin tức</th>
+                    <th>Nội dung</th>
+                    <th>Tiêu đề</th>
+                    @*<th>Mô tả</th>
+                        <th>Hình ảnh</th>
+                        <th>Detail</th>*@
+                    <th>Ngày đăng</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Mã tin tức</th>
+                    <th>Nội dung</th>
+                    <th>Tiêu đề</th>
+                    @*<th>Mô tả</th>
+                        <th>Hình ảnh</th>
+                        <th>Detail</th>*@
+                    <th>Ngày đăng</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="/Admin/ContentTinTuc/Edit/@item.IDConTent">Sửa</a>
+                            |
+                            <a href="/Admin/ContentTinTuc/Edit/@item.IDConTent ">Xóa</a>
+                        </td>
+                        <td>@item.IDConTent</td>
+                        <td>@item.Name</td>
+                        <td>@item.MetaTitle</td>
+                        @*<td>@item.Description</td>
+                            <td>@item.Image</td>
+                            <td>@item.Detail</td>*@
+                        <td>@(item.ModifiedDay.HasValue? @item.ModifiedDay.Value.ToString("dd/MM/yyyy") : "")</td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+

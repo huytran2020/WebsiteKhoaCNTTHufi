@@ -1,0 +1,27 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+@if ((Session["Name"] != null))
+{
+    <div class="dong-ngang">
+        <label for="TenKH" class="a">Mã sinh viên của bạn</label>
+    </div>
+    <div class="dong-ngang">
+        <div class="cot-1">
+            <input class="form-control1" type="text" value="@Session["MaSinhVien"].ToString()" name="MaUser" id="MaUser" />
+        </div>
+    </div>
+    <div class="dong-ngang">
+        <label for="TenKH" class="a">Tên sinh viên của bạn</label>
+    </div>
+    <div class="dong-ngang">
+        <div class="cot-1">
+            <input class="form-control1" type="text" value="@Session["Name"].ToString()" name="TenUser" id="TenUser" />
+        </div>
+    </div>
+}
+else
+{
+    <a>Không có thông tin</a>
+}
+

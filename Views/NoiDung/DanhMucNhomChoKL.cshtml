@@ -1,0 +1,111 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@model NhomSV
+@{
+    ViewBag.Title = "DanhMucNhomChoKL";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @if (Session["MaSinhVien"].ToString() == Session["MaSV1"].ToString() && int.Parse(Session["MaLoaiNhom"].ToString()) == 3)
+    {
+        <head>
+            <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+            <link href="~/Content/PagedList.css" rel="stylesheet" />
+        </head>
+        <div id="left">
+            <div id="detai">
+                <div class="de-tai">
+                    <h2>Danh sách nhóm chờ khóa luận của bạn</h2>
+                    <table class="detail" border="1" cellspacing="0" cellpadding="0">
+                        <tr style="height:50px; background:#c7bfbf;text-align: center ">
+                            <th>Mã nhóm</th>
+                            <th>Mã loại nhóm</th>
+                            <th>Mã khóa</th>
+                            <th>Loại đề tài</th>
+                            <th>Mã số sinh viên </th>
+                            <th>Tên sinh viên </th>
+                            <th>Chức vụ sinh viên </th>
+                            <th colspan="1">Tùy chọn</th>
+                     
+                        </tr>
+
+                        <tr style="height:70px; text-align: center">
+                            <td rowspan="2">@Session["MaNhom"].ToString()</td>
+                            <td rowspan="2">@Session["MaLoaiNhom"].ToString()</td>
+                            <td>@Session["MaKhoaSV1"].ToString()</td>
+                            <td rowspan="2">@Session["TenLoaiDeTai"].ToString()</td>
+                            <td>@Session["MaSV1"].ToString()</td>
+                            <td>@Session["TenSV1"].ToString()</td>
+                            <td>@Session["ChucVuSV1"].ToString()</td>
+                            <td rowspan="2"><a href="#">Xóa</a></td>
+                        </tr>
+                        <tr style="height:70px; text-align: center">
+                            <td>@Session["MaKhoaSV2"].ToString()</td>
+                            <td>@Session["MaSV2"].ToString()</td>
+                            <td>@Session["TenSV2"].ToString()</td>
+                            <td>@Session["ChucVuSV2"].ToString()</td>
+                            @*<td><a href="@Url.Action("XacNhanNhomKhoaLuan","DangKyNhomDoAn")">Xác nhận</a></td>*@
+                            
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            @{ Html.RenderAction("MenuDeTai", "NoiDung");}
+        </div>
+    }
+    else if (Session["MaSinhVien"].ToString() == Session["MaSV2"].ToString() && int.Parse(Session["MaLoaiNhom"].ToString()) == 3)
+    {
+        <head>
+            <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+            <link href="~/Content/PagedList.css" rel="stylesheet" />
+        </head>
+        <div id="left">
+            <div id="detai">
+                <div class="de-tai">
+                    <h2>Danh sách nhóm chờ khóa luận của bạn</h2>
+                    <table class="detail" border="1" cellspacing="0" cellpadding="0">
+                        <tr style="height:50px; background:#c7bfbf;text-align: center ">
+                            <th>Mã nhóm</th>
+                            <th>Mã loại nhóm</th>
+                            <th>Mã khóa</th>
+                            <th>Loại đề tài</th>
+                            <th>Mã số sinh viên </th>
+                            <th>Tên sinh viên </th>
+                            <th>Chức vụ sinh viên </th>
+                            <th colspan="2">Tùy chọn</th>
+                        </tr>
+
+                        <tr style="height:70px; text-align: center">
+                            <td rowspan="2">@Session["MaNhom"].ToString()</td>
+                            <td rowspan="2">@Session["MaLoaiNhom"].ToString()</td>
+                            <td>@Session["MaKhoaSV1"].ToString()</td>
+                            <td rowspan="2">@Session["TenLoaiDeTai"].ToString()</td>
+                            <td>@Session["MaSV1"].ToString()</td>
+                            <td>@Session["TenSV1"].ToString()</td>
+                            <td>@Session["ChucVuSV1"].ToString()</td>
+                        </tr>
+                        <tr style="height:70px; text-align: center">
+                            <td>@Session["MaKhoaSV2"].ToString()</td>
+                            <td>@Session["MaSV2"].ToString()</td>
+                            <td>@Session["TenSV2"].ToString()</td>
+                            <td>@Session["ChucVuSV2"].ToString()</td>
+                            <td><a href="@Url.Action("XacNhanNhomKhoaLuan","DangKyNhomDoAn")">Xác nhận</a></td>
+                            <td><a href="#">Từ chối</a></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            @{ Html.RenderAction("MenuDeTai", "NoiDung");}
+        </div>
+    }
+    else
+    {
+        <a>Lỗi</a>
+    }
+
+
+

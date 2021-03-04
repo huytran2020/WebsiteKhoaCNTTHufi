@@ -1,0 +1,73 @@
+﻿body {
+}
+#main #left .noidung {
+    margin-top: 10px;
+    height: auto;
+    width: 1200px;
+    margin-bottom: 0px;
+    text-align: left;
+}
+#main #left .noidung  .noidung-hinh {
+    width: 1000px;
+    height: 500px;
+    float: left;
+    margin-bottom:10px;   
+}
+#main #left .noidung  .noidung-hinh img {
+    width: 1000px;
+    height: 500px;
+    margin-bottom:10px;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat {
+    width: 1000px;
+    height: 150px;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom:10px;
+}
+#main #left .noidung .tennoidung {
+        width: 1000px;
+        height: 40px;
+        float: left;
+}
+    #main #left .noidung .tennoidung h2 {
+        font-size: 20px;
+        margin-top: 0px;
+        padding: 0px;
+        text-align: left;
+        margin-left: 0px;
+        margin-right: 5px;
+    }
+    #main #left .noidung .tennoidung h2 a {
+        text-decoration: none;
+        color: black;
+    }   
+
+    #main #left .noidung .noidung-chitiet {
+        width: 1000px;
+        height: auto;
+        float: left;
+        margin-left: 5px;
+        text-align: left;
+        margin-right: 5px;
+    }
+    #main #left .noidung .noidung-chitiet a {
+        margin-top: 0px;
+        font-size: 15px;
+        margin-left: 0px;
+        text-align: left;
+    }
+    #main #left .noidung .ngaydang {
+        width: 1000px;
+        height: 50px;
+        float: left;
+        
+    }
+#main #left .noidung  .ngaydang a {
+    font-size: 16px;
+    padding-top: 0px;
+    margin-left: 0px;
+    color: cornflowerblue;
+            
+}

@@ -1,0 +1,237 @@
+﻿@model DoAnKhoaCNTT.Models.DangKyNhom.DangKyNhom
+
+@{
+    ViewBag.Title = "DangKyNhom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main">
+    <div id="left">
+        <div class="register">
+            <div class="thongbao">
+                <img src="~/Content/images/dangky.jpg" />
+            </div>
+            <div class="dangky">
+                <div class="content-mid">
+                    @using (Html.BeginForm("DangKyNhom", "DangKyNhom", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @*<div class="form-horizontal">*@
+                        <h4>Đăng ký nhóm</h4>
+                        <hr />
+                        <div class="dong-ngang">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.manhom, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.manhom, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.manhom, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.tenLoaiDT, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.tenLoaiDT, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.tenLoaiDT, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.makhoa, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.makhoa, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.makhoa, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.masv1, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.masv1, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.masv1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.tensv1, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.tensv1, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.tensv1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.chucvu1, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.chucvu1, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.chucvu1, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.masv2, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.masv2, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.masv2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.tensv2, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.tensv2, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.tensv2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="noidung-yeucau">
+                            @Html.LabelFor(model => model.chucvu2, htmlAttributes: new { @class = "a" })
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                @Html.TextBoxFor(model => model.chucvu2, new { @class = "form-control1" })
+                            </div>
+                            <div class="cot-2">
+                                @Html.ValidationMessageFor(model => model.chucvu2, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="dong-ngang">
+                            <div class="cot-2">
+                                <input type="submit" value="Đăng ký" class="btn btn-default" />
+                            </div>
+                        </div>
+                        @*</div>*@
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        @{ Html.RenderAction("MenuDeTaiDoAn", "NoiDung");}
+    </div>
+</div>
+
+@*@using (Html.BeginForm("DangKyNhom", "DangKyNhom", FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>DangKyNhom</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.manhom, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.manhom, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.manhom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tenLoaiDT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.tenLoaiDT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tenLoaiDT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.makhoa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.makhoa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.makhoa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.masv1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.masv1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.masv1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tensv1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.tensv1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tensv1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.chucvu1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.chucvu1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.chucvu1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.masv2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.masv2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.masv2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tensv2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.tensv2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tensv2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.chucvu2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.chucvu2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.chucvu2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}*@

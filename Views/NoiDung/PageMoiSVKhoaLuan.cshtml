@@ -1,0 +1,48 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SinhVien>
+@{
+    ViewBag.Title = "PageMoiSVKhoaLuan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+</head>
+
+<div id="left">
+    <div id="detai">
+        <div class="de-tai">
+            <h2>Danh sách sinh viên làm khóa luận</h2>
+            <table class="detail" border="1" cellspacing="0" cellpadding="0" style="width:950px">
+                <tr style="height:50px; background:#c7bfbf ">
+                    <th>Mã sinh viên</th>
+                    <th>Tên sinh viên</th>
+                    <th>Khóa</th>
+                    <th>Điểm trung bình</th>
+                    <th>Nơi sinh</th>
+                    <th>Mời vào nhóm</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr style="height:70px; text-align: center">
+                        <td>@item.MaSinhVien</td>
+                        <td>@item.Name</td>
+                        <td>@item.MaKhoa</td>
+                        <td>@item.Mark</td>
+                        <td>@item.Address</td>
+                        <td><a href="@Url.Action("DangKyNhomKhoaLuan","DangKyNhomKhoaLuan", new { maSV = item.MaSinhVien })">Mời vào nhóm</a></td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="phantrang">
+            @Html.PagedListPager(Model, Page => Url.Action("GetPagingDangKyNhomKL", new { Page }),
+            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+            { HttpMethod = "GET", UpdateTargetId = "main" }))
+        </div>
+    </div>
+</div>
+<div id="right">
+    @{ Html.RenderAction("MenuDeTai", "NoiDung");}
+</div>

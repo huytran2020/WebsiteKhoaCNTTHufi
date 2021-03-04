@@ -1,0 +1,15 @@
+﻿@model List<DoAnKhoaCNTT.Models.Database.Menu>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div class="menu_top">
+    <ul class="menu_ul">
+        @foreach (var item in Model)
+        {
+            <li class="menu_li"><a href="@item.Link" target="@item.Target">@item.Text</a></li>
+        }
+    </ul>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "DanhMucKhoaLuan";
+    Layout = null;
+    var listDeTaiKLs = (List<DoAnKhoaCNTT.Models.Database.DeTai>)ViewBag.DanhSachDeTaiKLs;
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div id="main">
+    @{ Html.RenderAction("GetPagingKL", "NoiDung", new { page = 1 });}
+</div>
+
+
+

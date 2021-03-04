@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "DanhMucSinhVienKhoaLuan";
+    Layout = null;
+    var listSVKhoaLuans = (List<DoAnKhoaCNTT.Models.Database.SinhVien>)ViewBag.DanhSachSVKhoaLuans;
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div id="main">
+    @{ Html.RenderAction("GetPagingSVKL", "NoiDung", new { page = 1 });}
+</div>
+@*<div id="detai">
+    <div class="de-tai">
+        <h2>Danh sách sinh viên làm khóa luận</h2>
+        <table class="detail" border="1" cellspacing="0" cellpadding="0" style="width:950px">
+            <tr style="height:50px; background:#c7bfbf ">
+                <th>Mã sinh viên</th>
+                <th>Tên sinh viên</th>
+                <th>Khóa</th>
+                <th>Điểm trung bình</th>
+                <th>Nơi sinh</th>
+            </tr>
+            @foreach (var item in listSVKhoaLuans)
+            {
+                <tr style="height:70px">
+                    <td>@item.MaSinhVien</td>
+                    <td>@item.Name</td>
+                    <td>@item.MaKhoa</td>
+                    <td>@item.Mark</td>
+                    <td>@item.Address</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<div id="right">
+    @{ Html.RenderAction("MenuDeTai", "NoiDung");}
+    @{ Html.RenderAction("DoiTac", "Home");}
+</div>*@
+
+

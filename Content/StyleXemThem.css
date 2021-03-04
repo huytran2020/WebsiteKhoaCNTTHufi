@@ -1,0 +1,253 @@
+﻿body {
+    font-family: Tahoma;
+    font-size: 20px;
+    width: 1260px;
+    margin: 0px;
+    padding:0px;
+    /*margin-left: 150px;*/
+    text-align:center;
+}
+#banner {
+    background: red;
+    height: 150px;
+    width: 1260px;
+    margin-top: 0px;
+}
+#banner img {
+    background: #FFF;
+    width: 1260px;
+    height: 150px; 
+}
+#menu_top {
+    background: cornflowerblue;
+    height: 55px;
+    width: 1260px;
+}
+
+#menu_top #anhnen {
+    /*margin-top: 55px;*/
+    height: 555px;
+    width: 1260px;
+}
+#menu_top #anhnen img {
+    background: #FFF;
+    height: 500px;
+    width: 1260px;
+}
+#main {
+    width: 1260px;
+    height: auto;
+    margin-top: 10px;
+}
+#main #left {
+    width: 1000px;
+    float: left;
+ /*   min-height: 2000px;*/
+}
+#main #right {
+    width: 260px;
+    float: left;
+  /*  min-height: 2000px;*/
+  text-align: center;
+}
+#footer {
+    background: cornflowerblue;
+    width: 1260px;
+    text-align: center;
+    height: 300px;
+    color: #FFF;
+    clear: left;
+    text-decoration: none;
+}
+#footer ul li {
+    list-style: none;
+    margin-top: 0px;
+    line-height: 30px;
+}
+#menu_top ul {
+    margin: 0px;
+    padding: 0px;
+}
+#menu_top ul li {
+    list-style: none;
+    float: left;
+    display: flex;
+}
+#menu_top ul li a:hover {
+    color: orange;
+}
+#menu_top ul li a {
+    text-decoration: none;
+    /*display: block;*/
+    height: 50px;
+    line-height: 40px;
+    color: #FFF;
+    padding: 5px 20px 0px 20px;
+    border-right: 1px solid #ccc;
+}
+#menu_top ul li .sub_menu {
+    margin-top: 55px;
+    position: absolute;
+}
+#menu_top ul li .sub_menu li {
+    display: none;
+    width: 310px;
+    height: 40px;
+    border-top: 1px solid #FFF;
+    color:black;
+    background: cornflowerblue;
+    clear: left;
+    text-align: left;
+}
+#menu_top ul li .sub_menu li a {
+    border-right:none;
+    text-align:left;
+}
+#menu_top ul li:hover ul li {
+    display: block;
+}
+
+/*khung bên phải*/
+#main #right .menu_right ul {
+    margin: 0px;
+    padding: 0px;
+}
+#main #right .menu_right ul li {
+    list-style: none;
+    margin-top: 0px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+#main #right .menu_right ul li a {
+    display: block;
+    text-decoration: none;
+    border: none;
+    height: 150px;
+    width:150px;
+    text-align: center;
+}
+#main #right .menu_right ul li img {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    margin-top: 0px;
+}
+#main #right .menu_right h3 {
+    background: cadetblue url(images/menu.png) no-repeat 30px ;
+    height: 40px;
+    margin-top: 0px;
+    font-size: 17px;
+    line-height: 37px;
+    color: #FFF;
+    text-indent: 20px;
+    margin-left: 0px;
+    padding-top: 0px;
+    text-align: center;
+}
+#menu_top .search {
+    text-align: left;
+    height: 40px;
+    width: 250px;
+    background: #FFF;
+    border: none;
+    border-radius: 50px;
+    padding: 0px 10px;
+    position: absolute;
+    margin-left: 980px;
+    margin-top: 5px;
+}
+#menu_top .search .search-txt {
+    margin-top: 5px;
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 20px;
+}
+#menu_top .search .search-btn {
+    height: 35px;
+    width: 30px;
+    margin-top: 20px;
+    
+}
+
+#main #left .noidung .tieude {
+    border-bottom: 2px solid coral;
+    text-align: left;
+}
+#main #left .noidung .tieude a {
+    margin-top: 20px;
+    height: 50px;
+    font-size: 30px;
+    color: coral;
+    text-align: left;
+}
+
+#main #left .noidung .noidung-tuyensinh {
+    margin-top: 10px;
+    height: 200px;
+    width: 1000px;
+    margin-bottom: 10px;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-hinh {
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-right:0px;   
+}
+#main #left .noidung .noidung-tuyensinh .noidung-hinh img {
+    width: 300px;
+    height: 200px;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat {
+    width: 700px;
+    height: 200px;
+    float: left;
+    margin:0px;
+    padding:0px;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .tennoidung {
+    width: 700px;
+    height: 50px;
+    float: left;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .tennoidung h2 {
+    font-size: 18px;
+    margin-top:0px;
+    padding:0px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 5px;
+   
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .tennoidung h2 a {
+     text-decoration: none;
+     color: black;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .noidung-chitiet {
+    width: 700px;
+    height: 120px;
+    float: left;
+    margin-left:5px;
+    text-align: left;
+    margin-right:5px;
+}
+
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .noidung-chitiet a {
+    margin-top: 0px;
+    font-size: 15px;
+    margin-left: 0px;
+    text-align: left;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .ngaydang {
+    width: 700px;
+    height: 30px;
+    float: left;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .ngaydang a {
+    font-size: 15px;
+    padding-top: 0px;
+    margin-left: 300px;
+    color: cornflowerblue;
+}

@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+
+<div id="main">
+    <div id="left">
+        <div class="login">
+            <div class="thongbao">
+                <img src="~/Content/images/santruong.png" />
+            </div>
+            <div class="dangnhap">
+                <div class="content-mid">
+                    <h3>Đăng nhập</h3>
+                    <form action="@Url.Action("DangNhap","TaiKhoan")" method="post">
+
+                        <div class="noidung-yeucau">
+                            <a>Nhập tên đăng nhập</a>
+                        </div>
+                        <div class="dong-ngang">
+                            <input class="form-control1" type="text" name="TenDN" id="TenDN" placeholder="Nhập tên đăng nhập" />
+                        </div>
+                        <div class="noidung-yeucau">
+                            <a>Nhập mật khẩu</a>
+                        </div>
+                        <div class="dong-ngang">
+                            <input class="form-control1" type="password" name="MatKhau" id="MatKhau" placeholder="Nhập mật khẩu" />
+                        </div>
+                        <div class="dong-ngang">                        
+                             <button type="submit" class="dangnhap-detai" >Đăng nhập</button> 
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        @{Html.RenderAction("DoiTac", "Home");}
+    </div>
+</div>

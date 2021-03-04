@@ -1,0 +1,97 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@model DeTai
+@{
+    ViewBag.Title = "DangKyDeTaiDoAn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="main">
+    <div id="left">
+        <div class="register">
+            <div class="thongbao">
+                <img src="~/Content/images/dangky.jpg" />
+            </div>
+            <div class="dangky">
+                <div class="content-mid">
+                    <form action="@Url.Action("DangKyDeTaiDoAn","DangKyDeTai")" method="post">
+
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã sinh viên của bạn</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Session["MaSinhVien"].ToString()" name="MaUser" id="MaUser" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Tên sinh viên của bạn</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Session["Name"].ToString()" name="TenUser" id="TenUser" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã nhóm</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@int.Parse(@Session["MaSinhVien"].ToString())" name="MaNhom" id="MaNhom" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã đề tài</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.MaDeTai" name="MaDeTai" id="MaDeTai" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Tên đề tài</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.TenDeTai" name="TenDeTai" id="TenDeTai" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Tên loại đề tài</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.LoaiDeTai.TenLoai" name="TenLoaiDeTai" id="TenLoaiDeTai" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Đề tài khóa</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.MaKhoa" name="KhoaDeTai" id="KhoaDeTai" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Tên giáo viên hướng dẫn</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.MaGV" name="TenGVHD" id="TenGVHD" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-2">
+                                <input type="submit" value="Đăng ký đề tài" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        @{ Html.RenderAction("MenuDeTaiDoAn", "NoiDung");}
+    </div>
+</div>
+

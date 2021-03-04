@@ -1,0 +1,43 @@
+﻿@model List<DoAnKhoaCNTT.Models.Database.Menu>
+@using DoAnKhoaCNTT.Models.Database;
+@using DoAnKhoaCNTT.Models;
+
+<div id="menu_top">
+    <ul>
+        @foreach (var item in Model)
+        {
+
+            <li><a href="@item.Link" target="@item.Target">@item.Text</a></li>             
+        }
+        @*<li><a href="@Url.Action("Index","Home")" title="Trang chủ">Trang chủ</a></li>
+        <li><a href="@Url.Action("NoiDungTuyenSinh","NoiDung")" title="Tuyển sinh">Tuyển sinh</a></li>
+        <li><a href="@Url.Action("NoiDungTinTuc","NoiDung")" title="Tin tức">Tin tức</a></li>
+        <li>
+            <a href="@Url.Action("NoiDungDaoTao","NoiDung")" title="Đào tạo">Đào tạo</a>
+            <ul class="sub_menu">
+                <li><a href="#">Chương trình đào tạo</a></li>
+                <li><a href="#">Đào tạo ngắn hạn</a></li>
+                <li><a href="#">Quy chế đào tạo</a></li>
+                <li><a href="#">Mục tiêu đào tạo</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="@Url.Action("NoiDungGioiThieu","NoiDung")" title="Giới thiệu">Giới thiệu</a>
+            <ul class="sub_menu">
+                <li><a href="#">Giới thiệu khoa</a></li>
+                <li><a href="#">Cơ cấu tổ chức</a></li>
+                <li><a href="#">Bộ môn khoa học máy tính</a></li>
+                <li><a href="#">Bộ môn mạng máy tính</a></li>
+                <li><a href="#">Bộ môn hệ thống thông tin</a></li>
+                <li><a href="#">Bộ môn công nghệ phần mềm </a></li>
+            </ul>
+        </li>
+        <li><a href="@Url.Action("NoiDungKhoaHoc","NoiDung")" title="Khoa học">Khoa học</a></li>
+        <li><a href="@Url.Action("Index","About")" title="Liên hệ">Liên hệ</a></li>*@
+    </ul>
+    <div class="search">
+        <input id="txt-search" class="search-txt" name="searchString" placeholder="Search...">
+        @*<button class="search-btn" type="submit"><img src="~/Content/images/searchicon.png"></button>*@
+        <a class="search-btn" href="#" type="button"><img src="~/Content/images/searchicon.png"></a>
+    </div>
+</div>

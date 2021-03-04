@@ -1,0 +1,50 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@using DoAnKhoaCNTT.Dao;
+@model DeTai
+@{
+    ViewBag.Title = "ChiTietDeTai";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div id="detai">
+    <div class="de-tai">
+        <h3>Chi tiết đề tài</h3>
+        <table class="detail" border="1" cellspacing="0" cellpadding="0" style=" width:1000px; height: auto; font-size:15px;">
+            <tr style="height:50px;">
+                <th>Tên đề tài</th>
+                <td>@Model.TenDeTai</td>
+            </tr>
+            <tr style="height:50px;">
+                <th >Mã đề tài</th>
+                <td>@Model.MaDeTai</td>
+            </tr>
+            <tr style="height:50px;">
+                <th>Loại đề tài</th>
+                <td>@Model.LoaiDeTai.TenLoai</td>
+            </tr>
+            <tr style="height:50px;">
+                <th>Yêu cầu</th>
+                <td>@Model.YeuCau</td>
+            </tr>
+            <tr style="height:50px;">
+                <th>Giáo viên hướng dẫn</th>
+                <td>@Model.GiaoVienHD.Name</td>
+            </tr>
+            <tr style="height:50px;">
+                <th>Ngày bắt đầu</th>
+                <td>@Model.LoaiDeTai.NBD</td>
+            </tr>
+            <tr style="height:50px;">
+                <th>Ngày Kết thúc</th>
+                <td>@Model.LoaiDeTai.NKT</td>
+            </tr>
+            @*<tr style="height:50px;">             
+                <td colspan="2" style="font-size:15px;"><a href="@Url.Action("DangKyDeTai","DangKyDeTai")">Đăng kí đề tài</a></td>
+            </tr>*@
+        </table>
+    </div>
+</div>
+<div id="right">
+    @{ Html.RenderAction("MenuDeTaiDoAn", "NoiDung");}
+</div>

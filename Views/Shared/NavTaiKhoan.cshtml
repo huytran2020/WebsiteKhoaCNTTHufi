@@ -1,0 +1,46 @@
+﻿<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+@if ((Session["Name"] != null))
+{
+    if (int.Parse(Session["MaLoaiDeTai"].ToString()) == 1)
+    {
+        <div class="menu_top">
+            <ul class="menu_ul">
+                <li class="menu_li"><a href="@Url.Action("DangXuat","TaiKhoan")">Đăng xuất</a></li>               
+                <li class="menu_li"><a>@Session["Name"].ToString()</a></li>
+            </ul>
+        </div>
+    }
+    else if (int.Parse(Session["MaLoaiDeTai"].ToString()) == 2)
+    {
+        <div class="menu_top">
+            <ul class="menu_ul">
+                <li class="menu_li"><a href="@Url.Action("DangXuat","TaiKhoan")">Đăng xuất</a></li>                
+                <li class="menu_li"><a>@Session["Name"].ToString()</a></li>
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div class="menu_top">
+            <ul class="menu_ul">
+                <li class="menu_li"><a href="@Url.Action("DangXuat","TaiKhoan")">Đăng xuất </a></li>               
+                <li class="menu_li"><a>@Session["Name"].ToString()</a></li>
+            </ul>
+        </div>
+    }
+    
+}
+else
+{
+    <div class="menu_top">
+        <div class="taikhoan">
+            <a href="@Url.Action("DangNhap","TaiKhoan")">Đăng nhập</a>
+        </div>
+
+        @*<ul class="menu_ul">
+                <li class="menu_li"><a href="@Url.Action("DangNhap","TaiKhoan")">Đăng nhập</a></li>
+            </ul>*@
+    </div>
+}

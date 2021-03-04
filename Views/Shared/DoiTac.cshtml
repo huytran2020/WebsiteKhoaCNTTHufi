@@ -1,0 +1,10 @@
+﻿@model List<DoAnKhoaCNTT.Models.Database.DoiTac>
+<div class="menu_right">
+    <h3>Danh mục đối tác</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="@item.Link" target="@item.Target"><img src="~/Content/images/@item.Hinh" alt=""></a></li>
+        }
+    </ul>
+</div>

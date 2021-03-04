@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Website Khoa Công Nghệ Thông Tin HUFI</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div id="dangnhap">
+        @{Html.RenderPartial("NavTaiKhoan");}
+    </div>
+    <div id="banner">
+        <img src="~/Content/images/banner.png" />
+    </div>
+    @{ Html.RenderAction("MainMenu", "Home");}
+
+    <div id="anhnen">
+        <img src="~/Content/images/tuyensinh.png">
+    </div>
+
+    <div id="main">
+        @if (TempData["AlertMessage"] != null)
+        {
+            <div id="AlertBox" class="alert @TempData["AlertType"] hide">
+                @TempData["AlertMessage"]
+            </div>
+        }
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <ul>
+            <li><h4>Liên hệ: Khoa Công Nghệ Thông Tin - Trường Đại Học Công Nghiệp Thực Phẩm  TP.HCM</h4></li>
+            <li><h4>Địa chỉ: 140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú, TP.HCM. ĐT: (028).38161673</h4></li>
+            <li><h4>Mail: kcntt@hufi.edu.vn</h4></li>
+        </ul>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/assets/admin/dist/js/sb-admin-2.js"></script>
+</body>
+</html>

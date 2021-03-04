@@ -1,0 +1,79 @@
+﻿@model PagedList.IPagedList<DoAnKhoaCNTT.Models.Database.DeTai>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <a href="@Url.Action("Index", "KhoaLuan")">Thêm mới</a>
+</div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Mã đề tài</th>
+                    <th>Mã khoa</th>
+                    <th>Tên đề tài</th>
+                    @*<th>Yêu cầu</th>
+                        <th>Mục đích</th>
+                        <th>Mã lọai</th>
+                        <th>Mã GV</th>*@
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th>Mã đề tài</th>
+                    <th>Mã khoa</th>
+                    <th>Tên đề tài</th>
+                    @*<th>Yêu cầu</th>
+                        <th>Mục đích</th>
+                        <th>Mã lọai</th>
+                        <th>Mã GV</th>*@
+                    <th>Trạng thái</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a href="/Admin/KhoaLuan/Edit/@item.MaDeTai">Sửa</a>
+                            |
+                            <a href="/Admin/KhoaLuan/Edit/@item.MaDeTai ">Xóa</a>
+                        </td>
+                        <td>@item.MaDeTai</td>
+                        <td>@item.MaKhoa</td>
+                        <td>@item.TenDeTai</td>
+                        @*<td>@item.YeuCau</td>
+                            <td>@item.MucDich</td>
+                            <td>@item.MaLoai</td>
+                            <td>@item.MaGV</td>*@
+                        <td>@item.TrangThai</td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+</div>
+
+
+

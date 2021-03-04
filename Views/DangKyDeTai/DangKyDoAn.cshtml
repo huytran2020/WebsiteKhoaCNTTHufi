@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "DangKyDoAn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div id="main">
+    <div id="left">
+        <div class="register">
+            <div class="thongbao">
+                <img src="~/Content/images/santruong.png" />
+            </div>
+            <div class="dangky">
+                <div class="content-mid">
+                    <h3>Đăng ký đề tài</h3>
+                    <form action="@Url.Action("DangKyDoAn","DangKyDeTai")" method="post">
+
+                        <div class="noidung-yeucau">
+                            <a>Thông tin đề tài</a>
+                        </div>
+
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="cotmadt" type="text" name="MaDT" id="MaDT" placeholder="Nhập mã đề tài" />
+                            </div>
+                            <div class="cot-2">
+                                <input class="cottendt" type="text" name="TenDT" id="TenDT" placeholder="Nhập tên đề tài" />
+                            </div>
+                        </div>
+                        <div class="noidung-yeucau">
+                            <a>Thông tin sinh viên 1</a>
+                        </div>
+                        <div class="dong-ngang">
+
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" name="MSSV1" id="MSSV1" placeholder="Nhập mã số sinh viên 1" />
+                            </div>
+                            <div class="cot-2">
+                                <input class="form-control2" type="text" name="TenSV1" id="TenSV1" placeholder="Nhập họ tên sinh viên 1" />
+                            </div>
+                        </div>
+                        <div class="noidung-yeucau">
+                            <a>Thông tin sinh viên 2</a>
+                        </div>
+                        <div class="dong-ngang">
+
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" name="MSSV2" id="MSSV2" placeholder="Nhập mã số sinh viên 2" />
+                            </div>
+                            <div class="cot-2">
+                                <input class="form-control2" type="text" name="TenSV2" id="TenSV2" placeholder="Nhập họ tên sinh viên 2" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">                            
+                            <div class="cot-2">
+                                <button type="submit" class="dangky-detai" style="height:30px; width: 100px;">Đăng ký</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <div id="right">
+        @{ Html.RenderAction("MenuDeTaiDoAn", "NoiDung");}
+    </div>
+</div>
+

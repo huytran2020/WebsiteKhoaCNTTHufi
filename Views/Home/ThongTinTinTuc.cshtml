@@ -1,0 +1,20 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@*@using PagedList.Mvc;*@
+@*@model PagedList.IPagedList<ConTentTinTuc>*@
+@model TinTuc
+@{
+    ViewBag.Title = "ThongTinTinTuc";
+}
+<div id="left">
+    <div class="noidung">
+        <div class="tieude"><a>TUYỂN SINH</a></div>
+        <div class="noidung-tuyensinh">
+            <div class="noidu3ng-hinh"><img src="~/Content/images/@Model.Hinh" /></div>
+            <div class="noidung-moinhat">
+                <div class="tennoidung"><h2><a href="#">@Model.TenTinTuc</a></h2></div>
+                <div class="noidung-chitiet"><a>@Model.Mota</a></div>
+                <div class="ngaydang"><a>@Model.NgayDang</a></div>
+            </div>
+        </div>
+    </div>
+</div>

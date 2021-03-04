@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "NoiDungDaoTao";
+    Layout = null;
+    //var listNoiDungDaoTaos = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.XemThemNoiDungDaoTaos;
+}
+<div id="main">
+    @{ Html.RenderAction("GetPagingDT", "NoiDung", new { page = 1 });}
+</div>
+@*<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleXemDsNoiDung.css" />
+</head>
+
+<div id="main">
+    <div id="left">
+        <div class="noidung">
+            <div class="noidung-tuyensinh">
+                @foreach (var item in listNoiDungDaoTaos)
+                {
+                    var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                    <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                    <div class="noidung-moinhat">
+                        <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                        <div class="noidung-chitiet"><a>@item.Description</a></div>
+                        <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        @{Html.RenderAction("DoiTac", "Home");}
+    </div>
+</div>*@
+

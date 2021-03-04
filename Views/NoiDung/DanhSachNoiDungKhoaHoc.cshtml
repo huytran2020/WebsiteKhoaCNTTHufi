@@ -1,0 +1,38 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<ConTentTinTuc>
+@{
+    ViewBag.Title = "DanhSachNoiDungKhoaHoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/StyleXemDsNoiDung.css" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+</head>
+<div id="main-left">
+    <div id="left">
+        <div class="noidung">
+            <div class="noidung-tuyensinh">
+                @foreach (var item in Model)
+                {
+                    var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                    <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                    <div class="noidung-moinhat">
+                        <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung", "NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                        <div class="noidung-chitiet"><a>@item.Description</a></div>
+                        <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="phantrang">
+            @Html.PagedListPager(Model, Page => Url.Action("GetPagingKH", new { Page }),
+            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+            { HttpMethod = "GET", UpdateTargetId = "main" }))
+        </div>
+    </div>
+</div>
+<div id="right">
+    @{Html.RenderAction("DoiTac", "Home");}
+</div>
+

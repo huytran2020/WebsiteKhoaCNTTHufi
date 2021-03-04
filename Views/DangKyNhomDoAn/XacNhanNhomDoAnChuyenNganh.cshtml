@@ -1,0 +1,123 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@model NhomSV
+@{
+    ViewBag.Title = "XacNhanNhomDoAnChuyenNganh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/Content/Style.css" rel="stylesheet" />
+</head>
+<div id="main">
+    <div id="left">
+        <div class="register">
+            <div class="thongbao">
+                <img src="~/Content/images/dangky.jpg" />
+            </div>
+            <div class="dangky">
+                <div class="content-mid">
+                    <form action="@Url.Action("XacNhanNhomDoAnChuyenNganh","DangKyNhomDoAn")" method="post">
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Mã nhóm</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["MaNhom"].ToString()" name="MaNhom" id="MaNhom" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Mã loại nhóm</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["MaLoaiNhom"].ToString()" name="MaLoaiNhom" id="MaLoaiNhom" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Tên loại đề tài</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["TenLoaiDeTai"].ToString()" name="TenLoaiDT" id="TenLoaiDT" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Mã sinh viên nhóm trưởng</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["MaSV1"].ToString()" name="MaUser" id="MaUser" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Tên sinh viên nhóm trưởng</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["TenSV1"].ToString()" name="TenUser" id="TenUser" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Mã khóa nhóm trưởng</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["MaKhoaSV1"].ToString()" name="MaKhoaSV1" id="MaKhoaSV1" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Chức vụ nhóm trưởng</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["ChucVuSV1"].ToString()" name="ChucVuSV1" id="ChucVuSV1" />
+                            </div>
+                        </div>
+                       
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Mã sinh viên của thành viên</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["MaSV2"].ToString()" name="MaMember" id="MaMember" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Họ và tên của thành viên</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["TenSV2"].ToString()" name="TenMember" id="TenMember" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Mã khóa của thành viên</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["MaKhoaSV2"].ToString()" name="MaKhoaSV2" id="MaKhoaSV2" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang2">
+                            <label for="TenKH" class="a">Chức vụ thành viên</label>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-12">
+                                <input class="form-control1" type="text" value="@Session["ChucVuSV2"].ToString()" name="ChucVuSV2" id="ChucVuSV2" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang1">
+                            <div class="cot-2">
+                                <input type="submit" value="Xác nhận nhóm" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                        @Html.AntiForgeryToken()
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        @{ Html.RenderAction("MenuDeTaiDoAn", "NoiDung");}
+    </div>
+</div>

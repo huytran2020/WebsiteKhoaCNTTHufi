@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "DanhMucSinhVienDoAn";
+    Layout = null;
+    var listSVDoAns = (List<DoAnKhoaCNTT.Models.Database.SinhVien>)ViewBag.DanhSachSVDoAns;
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div id="main">
+    @{ Html.RenderAction("GetPagingSVDA", "NoiDung", new { page = 1 });}
+</div>
+

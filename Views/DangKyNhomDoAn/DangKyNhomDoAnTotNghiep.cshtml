@@ -1,0 +1,82 @@
+﻿@using DoAnKhoaCNTT.Models.Database;
+@model SinhVien
+@{
+    ViewBag.Title = "DangKyNhomDoAnTotNghiep";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="main">
+    <div id="left">
+        <div class="register">
+            <div class="thongbao">
+                <img src="~/Content/images/dangky.jpg" />
+            </div>
+            <div class="dangky">
+                <div class="content-mid">
+                    <form action="@Url.Action("DangKyNhomDoAnTotNghiep","DangKyNhomDoAn")" method="post">
+
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã sinh viên của bạn</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Session["MaSinhVien"].ToString()" name="MaUser" id="MaUser" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Tên sinh viên của bạn</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Session["Name"].ToString()" name="TenUser" id="TenUser" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã khóa của bạn</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Session["MaKhoa"].ToString()" name="MaKhoaSV1" id="TMaKhoaSV1" />
+                            </div>
+                        </div>
+                        @*@{Html.RenderPartial("TaiKhoanUser");}*@
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã sinh viên của thành viên</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.MaSinhVien" name="MaMember" id="MaMember" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Họ và tên của thành viên</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.Name" name="TenMember" id="TenMember" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <label for="TenKH" class="a">Mã khóa của thành viên</label>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-1">
+                                <input class="form-control1" type="text" value="@Model.MaKhoa" name="MaKhoaSV2" id="MaKhoaSV2" />
+                            </div>
+                        </div>
+                        <div class="dong-ngang">
+                            <div class="cot-2">
+                                <input type="submit" value="Đăng ký nhóm" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                        @Html.AntiForgeryToken()
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        @{ Html.RenderAction("MenuDeTaiDoAn", "NoiDung");}
+    </div>
+</div>
+

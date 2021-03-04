@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listNewNoiDungs = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NewNoiDungs;
+    var listNoiDungCus = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NoiDungCus;
+
+    var listNewNoiDungDaoTaos = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NewNoiDungDaoTaos;
+    var listNoiDungDaoTaoCus = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NoiDungDaoTaoCus;
+
+    var listNewNoiDungCongNghes = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NewNoiDungCongNghes;
+    var listNoiDungCongNgheCus = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NoiDungCongNgheCus;
+
+    var listNewNoiDungTinTucs = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NewNoiDungTinTucs;
+    var listNoiDungTinTucCus = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NoiDungTinTucCus;
+
+    var listNewNoiDungGioiThieus = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NewNoiDungGioiThieus;
+    var listNoiDungGioiThieuCus = (List<DoAnKhoaCNTT.Models.Database.ConTentTinTuc>)ViewBag.NoiDungGioiThieuCus;
+}
+@using DoAnKhoaCNTT.Models.Database;
+@model ConTentTinTuc
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+</head>
+<div id="left">
+    <div class="noidung">
+        <div class="tieude"><a>TUYỂN SINH</a></div>
+        <div class="noidung-tuyensinh">
+            @foreach (var item in listNewNoiDungs)
+            {
+                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                <div class="noidung-moinhat">
+                    <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                    <div class="noidung-chitiet"><a>@item.Description</a></div>
+                    <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                </div>
+            }
+            <div class="noidung-dexuat">
+                <div class="tennoidung-dexuat">
+                    @foreach (var item in listNoiDungCus)
+                    {
+                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                        <h2><img src="~/Content/images/rec.png" /><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2>
+
+                    }
+                </div>
+                <div class="xemthem"><a href="@Url.Action("NoiDungTuyenSinh","NoiDung")">>>Xem thêm</a></div>
+            </div>
+        </div>
+
+
+        <div class="tieude"><a>ĐÀO TẠO</a></div>
+        <div class="noidung-tuyensinh">
+            @foreach (var item in listNewNoiDungDaoTaos)
+            {
+                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                <div class="noidung-moinhat">
+                    <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                    <div class="noidung-chitiet"><a>@item.Description</a></div>
+                    <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                </div>
+            }
+            <div class="noidung-dexuat">
+                <div class="tennoidung-dexuat">
+                    @foreach (var item in listNoiDungDaoTaoCus)
+                    {
+                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                        <h2><img src="~/Content/images/rec.png" /><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2>
+                    }
+                </div>
+                <div class="xemthem"><a href="@Url.Action("NoiDungDaoTao","NoiDung")">>>Xem thêm</a></div>
+            </div>
+        </div>
+        <div class="tieude"><a>CÔNG NGHỆ</a></div>
+        <div class="noidung-tuyensinh">
+            @foreach (var item in listNewNoiDungCongNghes)
+            {
+                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                <div class="noidung-moinhat">
+                    <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                    <div class="noidung-chitiet"><a>@item.Description</a></div>
+                    <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                </div>
+            }
+            <div class="noidung-dexuat">
+                <div class="tennoidung-dexuat">
+                    @foreach (var item in listNoiDungCongNgheCus)
+                    {
+                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                        <h2><img src="~/Content/images/rec.png" /><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2>
+                    }
+                </div>
+                <div class="xemthem"><a href="@Url.Action("NoiDungKhoaHoc","NoiDung")">>>Xem thêm</a></div>
+            </div>
+        </div>
+        <div class="tieude"><a>TIN TỨC</a></div>
+        <div class="noidung-tuyensinh">
+            @foreach (var item in listNewNoiDungTinTucs)
+            {
+                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                <div class="noidung-moinhat">
+                    <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                    <div class="noidung-chitiet"><a>@item.Description</a></div>
+                    <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                </div>
+            }
+            <div class="noidung-dexuat">
+                <div class="tennoidung-dexuat">
+                    @foreach (var item in listNoiDungTinTucCus)
+                    {
+                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                        <h2><img src="~/Content/images/rec.png" /><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2>
+                    }
+                </div>
+                <div class="xemthem"><a href="@Url.Action("NoiDungTinTuc","NoiDung")">>>Xem thêm</a></div>
+            </div>
+        </div>
+        <div class="tieude"><a>Giới Thiệu</a></div>
+        <div class="noidung-tuyensinh">
+            @foreach (var item in listNewNoiDungGioiThieus)
+            {
+                var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                <div class="noidung-hinh"><img src="~/Content/images/@item.Image" alt="@item.Name" /></div>
+                <div class="noidung-moinhat">
+                    <div class="tennoidung"><h2><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2></div>
+                    <div class="noidung-chitiet"><a>@item.Description</a></div>
+                    <div class="ngaydang"><a>@item.ModifiedDay</a></div>
+                </div>
+            }
+            <div class="noidung-dexuat">
+                <div class="tennoidung-dexuat">
+                    @foreach (var item in listNoiDungGioiThieuCus)
+                    {
+                        var url = "/chi-tiet/" + item.MetaTitle + "-" + item.IDConTent;
+                        <h2><img src="~/Content/images/rec.png" /><a href="@Url.Action("ChiTietNoiDung","NoiDung", new { maTT = item.IDConTent })">@item.Name</a></h2>
+                    }
+                </div>
+                <div class="xemthem"><a href="@Url.Action("NoiDungGioiThieu","NoiDung")">>>Xem thêm</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="right">
+    @{Html.RenderAction("DoiTac", "Home");}
+</div>
+

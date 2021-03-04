@@ -1,0 +1,83 @@
+﻿body {
+}
+#main #left .noidung {
+    height: auto;
+}
+#main #left .noidung .phantrang {
+    height: 120px;
+}
+#main #left .noidung .noidung-tuyensinh {
+    margin-top: 10px;
+    height: 150px;
+    width: 1000px;
+    margin-bottom: 20px;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-hinh {
+    width: 300px;
+    height: 150px;
+    float: left;
+    margin-bottom:10px;   
+}
+#main #left .noidung .noidung-tuyensinh .noidung-hinh img {
+    width: 300px;
+    height: 150px;
+    margin-bottom:10px;
+}
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat {
+    width: 700px;
+    height: 150px;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom:10px;
+}
+    #main #left .noidung .noidung-tuyensinh .noidung-moinhat .tennoidung {
+        width: 700px;
+        height: 40px;
+        float: left;
+    }    
+
+        #main #left .noidung .noidung-tuyensinh .noidung-moinhat .tennoidung h2 {
+            font-size: 16px;
+            margin-top: 0px;
+            padding: 0px;
+            text-align: left;
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+
+            #main #left .noidung .noidung-tuyensinh .noidung-moinhat .tennoidung h2 a {
+                text-decoration: none;
+                color: black;
+            }
+
+    
+
+    #main #left .noidung .noidung-tuyensinh .noidung-moinhat .noidung-chitiet {
+        width: 700px;
+        height: 90px;
+        float: left;
+        margin-left: 5px;
+        text-align: left;
+        margin-right: 5px;
+    }
+
+        #main #left .noidung .noidung-tuyensinh .noidung-moinhat .noidung-chitiet a {
+            margin-top: 0px;
+            font-size: 12px;
+            margin-left: 0px;
+            text-align: left;
+        }
+
+    #main #left .noidung .noidung-tuyensinh .noidung-moinhat .ngaydang {
+        width: 600px;
+        height: 20px;
+        float: left;
+    }
+
+#main #left .noidung .noidung-tuyensinh .noidung-moinhat .ngaydang a {
+            font-size: 12px;
+            padding-top: 0px;
+            margin-left: 300px;
+            color: cornflowerblue;
+}
